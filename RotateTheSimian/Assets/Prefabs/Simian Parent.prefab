@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5318532002949392314}
   - component: {fileID: 5538847712236735676}
+  - component: {fileID: 6995008581787753264}
   m_Layer: 0
   m_Name: Simian Parent
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1777739951857743709}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -48,8 +49,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateToLeftKey: 0
   rotateToRightKey: 0
-  ascend: 0
+  move: 0
+  ascend: 1
   ascendingSpeed: 1
+  descendingSpeed: 1
+  descendingTime: 1
+--- !u!54 &6995008581787753264
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777739951857743709}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2895655126160399643
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +125,7 @@ GameObject:
   - component: {fileID: 2196782199495160103}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,7 +211,7 @@ GameObject:
   - component: {fileID: 5146747053407913750}
   m_Layer: 0
   m_Name: Simian Pivot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,7 +231,7 @@ Transform:
   m_Children:
   - {fileID: 3527758593689140994}
   m_Father: {fileID: 5318532002949392314}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 40.12, z: 0}
 --- !u!135 &8742363612848303063
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -221,7 +252,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
-  m_Center: {x: -1, y: 0.36, z: 0}
+  m_Center: {x: -1, y: 0.45, z: 0}
 --- !u!114 &5146747053407913750
 MonoBehaviour:
   m_ObjectHideFlags: 0

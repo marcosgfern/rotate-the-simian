@@ -8,6 +8,11 @@ public class CoconutBehaviour : MonoBehaviour
 
     [SerializeField] private bool fall = false;
 
+    [Header("References")]
+    [Tooltip("Prefab must be disabled by default.")]
+    [SerializeField] private GameObject disappearParticlePrefab;
+
+    private CoconutSide side;
 
     public bool Fall
     {
@@ -23,6 +28,27 @@ public class CoconutBehaviour : MonoBehaviour
         if (fall)
         {
             transform.position += fallingSpeed * Time.deltaTime * Vector3.down;
+        }
+    }
+
+    public void ResetCoconut(CoconutSide side)
+    {
+        this.side = side;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Player":
+                break;
+
+            case "Floor":
+                this.gameObject.SetActive(false);
+                break;
+
+            default:
+                break;
         }
     }
 }

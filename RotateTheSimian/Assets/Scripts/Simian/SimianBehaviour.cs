@@ -54,7 +54,6 @@ public class SimianBehaviour : MonoBehaviour
     {
         if (other.gameObject.CompareTag(CoconutTag))
         {
-            Debug.Log("Collision with " + other.gameObject.name);
             StartCoroutine(Descending());
         }
     }

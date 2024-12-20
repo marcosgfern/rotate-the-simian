@@ -10,7 +10,7 @@ public class CoconutBehaviour : MonoBehaviour
 
     [Header("References")]
     [Tooltip("Prefab must be disabled by default.")]
-    [SerializeField] private GameObject disappearParticlePrefab;
+    [SerializeField] private CoconutDisappearParticle disappearParticlePrefab;
 
     private CoconutSide side;
 
@@ -38,17 +38,21 @@ public class CoconutBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        switch (other.gameObject.tag)
+        if (other.gameObject.CompareTag("Player"))
         {
-            case "Player":
-                break;
+            CoconutDisappearParticle particle = Instantiate(disappearParticlePrefab, this.transform.position, this.transform.rotation);
+            particle.Side = side;
+            particle.gameObject.SetActive(true);
 
-            case "Floor":
-                this.gameObject.SetActive(false);
-                break;
+            this.gameObject.SetActive(false);
+        }
+    }
 
-            default:
-                break;
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            this.gameObject.SetActive(false);
         }
     }
 }

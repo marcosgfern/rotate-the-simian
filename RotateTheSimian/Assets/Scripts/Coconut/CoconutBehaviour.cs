@@ -33,6 +33,7 @@ public class CoconutBehaviour : MonoBehaviour
 
     public void ResetCoconut(CoconutSide side)
     {
+        fall = true;
         this.side = side;
     }
 

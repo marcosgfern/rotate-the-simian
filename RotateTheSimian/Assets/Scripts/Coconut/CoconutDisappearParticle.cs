@@ -34,16 +34,18 @@ public class CoconutDisappearParticle : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Particle side" + _side.ToString());
         float rebounceXDirection = _side.Equals(CoconutSide.Right) ? 1f : -1f;
 
         _rigidbody.AddForce(new Vector3(rebounceXDirection, 1, 0).normalized * rebounceForce);
 
+
         //Add random rotation
         Vector3 torque = new Vector3(
-            rotationForce,
-            rotationForce,
-            rotationForce
-            );
+            rotationForce * RandomNegative(),
+            rotationForce * RandomNegative(),
+            rotationForce * RandomNegative());
+
         _rigidbody.AddTorque(torque);
     }
 
@@ -61,5 +63,14 @@ public class CoconutDisappearParticle : MonoBehaviour
         _material.color  = _temporaryColor;
     }
 
+    /// <summary>
+    /// Returns either 1 or -1
+    /// </summary>
+    /// <returns>An integer with a value of 1 or -1, decided randomly</returns>
+    private int RandomNegative()
+    {
+        if(Random.Range(0, 1) == 0) return -1;
+        else return 1;
+    }
 
 }

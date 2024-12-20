@@ -42,7 +42,7 @@ public class CoconutSpawner : MonoBehaviour
         {
             CoconutBehaviour coconut = coconutPool.GetCoconut();
             coconut.gameObject.SetActive(true);
-            coconut.Fall = true;
+            coconut.ResetCoconut(side);
 
             coconut.transform.position = palmTree.GetSpawnPosition(side);
         }

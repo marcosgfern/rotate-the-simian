@@ -149,6 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e988ae45df6ea49aab5f787bba4f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallingSpeed: 7
+  fallingSpeed: 9.8
   fall: 0
   disappearParticlePrefab: {fileID: -5881246596401567404, guid: 384c6a8506452f74eb7b84e3a3ea42ff, type: 3}

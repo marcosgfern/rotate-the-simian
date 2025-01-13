@@ -55,7 +55,7 @@ public class CoconutDisappearParticle : MonoBehaviour
 
         if(_aliveCountdown < 0)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
 
         _temporaryColor = _material.color;

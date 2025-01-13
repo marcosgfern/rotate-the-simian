@@ -52,8 +52,8 @@ MonoBehaviour:
   move: 0
   ascend: 1
   ascendingSpeed: 1
-  descendingSpeed: 1
-  descendingTime: 1
+  descendingSpeed: 1.5
+  descendingTime: 0.8
 --- !u!54 &6995008581787753264
 Rigidbody:
   m_ObjectHideFlags: 0

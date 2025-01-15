@@ -34,7 +34,6 @@ public class CoconutDisappearParticle : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Particle side" + _side.ToString());
         float rebounceXDirection = _side.Equals(CoconutSide.Right) ? 1f : -1f;
 
         _rigidbody.AddForce(new Vector3(rebounceXDirection, 1, 0).normalized * rebounceForce);

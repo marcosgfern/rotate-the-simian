@@ -14,6 +14,12 @@ public class CoconutSpawner : MonoBehaviour
 
     private float coconutCooldown;
 
+    public bool SpawnCoconuts
+    {
+        get => spawnCoconuts;
+        set => spawnCoconuts = value;
+    }
+
     private void Start()
     {
         coconutCooldown = 0;
@@ -28,12 +34,12 @@ public class CoconutSpawner : MonoBehaviour
             if(coconutCooldown <= 0)
             {
                 coconutCooldown = timeBetweenCoconuts;
-                SpawnCoconuts();
+                SpawnCoconut();
             }
         }
     }
 
-    public void SpawnCoconuts()
+    private void SpawnCoconut()
     {
         CoconutSide side = UnityEngine.Random.Range(0, 2).Equals(0) ?
             CoconutSide.Left : CoconutSide.Right;

@@ -19,9 +19,20 @@ public class SimianBehaviour : MonoBehaviour
 
     private SimianRotation _simianRotation;
 
+    //Y coordinate of how low can simian go when descending
+    private float _lowestPoint;
+
+
+    public bool Move
+    {
+        get => move;
+        set => move = value;
+    }
+
     private void Start()
     {
         _simianRotation = GetComponentInChildren<SimianRotation>();
+        _lowestPoint = this.transform.position.y;
     }
 
     void Update()
@@ -46,6 +57,12 @@ public class SimianBehaviour : MonoBehaviour
             else
             {
                 this.transform.position += descendingSpeed * Time.deltaTime * Vector3.down;
+                if (this.transform.position.y < _lowestPoint) {
+                    this.transform.position = new Vector3(
+                        this.transform.position.x,
+                        _lowestPoint,
+                        this.transform.position.z);
+                }
             }
         }
     }
